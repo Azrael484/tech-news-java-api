@@ -5,7 +5,9 @@ import groovyjarjarantlr4.v4.runtime.misc.NotNull;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
+import java.util.Date;
 
 @Entity
 @JsonIgnoreProperties({ "hibernateLazyInitializer","handler" })

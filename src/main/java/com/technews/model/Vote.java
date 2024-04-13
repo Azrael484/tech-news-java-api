@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 
 import java.io.Serializable;
 import java.util.Objects;
+import jakarta.persistence.Table;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})

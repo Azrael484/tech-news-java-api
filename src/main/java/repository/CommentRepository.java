@@ -1,4 +1,4 @@
-package com.technews.model.repository;
+package repository;
 
 import com.technews.model.Comment;
 import org.springframework.stereotype.Repository;
