@@ -38,6 +38,9 @@ public class User implements Serializable {
         this.votes = votes;
         this.comments = comments;
     }
+    public User(){
+
+    }
 
     public Integer getId() {
         return id;

@@ -33,7 +33,7 @@ public class UserController {
 
     @GetMapping("/api/users/{id}")
     public User getUserById(@PathVariable Integer id) {
-        User returnUser = repository.getById(id);
+        User returnUser = repository.getReferenceById(id);
         List<Post> postList = returnUser.getPosts();
         for(Post p : postList) {
             p.setVoteCount(voteRepository.countVotesByPostId(p.getId()));
@@ -45,8 +45,7 @@ public class UserController {
     public User addUser(@RequestBody User user) {
         //Encrypt password
         user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
-        repository.save(user);
-        return user;
+        return repository.saveUser(user);
     }
 
     @PutMapping("/api/users/{id}")
@@ -55,7 +54,7 @@ public class UserController {
 
         if(!tempUser.equals(null)){
             user.setId(tempUser.getId());
-            repository.save(user);
+            repository.saveUser(user);
         }
         return user;
     }

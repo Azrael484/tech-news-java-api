@@ -33,7 +33,7 @@ public class CommentController {
 
     @PutMapping("/api/updateComment")
     public Comment updateComment(@RequestBody Comment comment) {
-        return repository.saveComment(comment);
+        return repository.updateComment(comment);
     }
 
     @DeleteMapping("/api/comments/{id}")
